@@ -21,7 +21,7 @@ layout = [
      ],
     [sg.Text('Папка импорта '), sg.InputText('Папка куда нужно дополнить'), sg.FolderBrowse(),
      ],
-    [sg.ProgressBar(max_value=265, orientation='h', size=(44, 20), key='progressbar')],
+    [sg.ProgressBar(max_value=265, orientation='h', size=(44, 20), key='progressbar', style='vista'), ],
     [sg.Output(size=(67, 15))],
     [sg.Submit('Применить'), sg.Cancel('Выход')]
 ]
@@ -70,7 +70,7 @@ while True:
             print('Из ',values[0])
             print('В ',values[1])
             progress_bar_max=len(list(Path(values[0]).rglob("*.png")))
-            folder_crawl(values[1],values[0])
+            folder_crawl(values[0],values[1])
             print('Завершено!')
         else:
             print('Выбраны не папки.')
