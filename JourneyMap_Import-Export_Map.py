@@ -43,7 +43,9 @@ def merging_images(img_path1,img_path2):
         img1 = Image.open(img_path1)
         img2 = Image.open(img_path2)
         img1.paste(img2, (0,0), img2)
-        img1.save(img2)
+        img1.save(img_path2)
+        img1.close()
+        img2.close()
     else:
         print('Скопирован:',img_path1)
         shutil.copyfile(img_path1, img_path2)
